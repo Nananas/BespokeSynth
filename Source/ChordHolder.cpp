@@ -96,7 +96,7 @@ void ChordHolder::PlayNote(double time, int pitch, int velocity, int voiceIdx, M
                anyInputNotesHeld = true;
          }
 
-         if (!anyInputNotesHeld) //new input, clear any existing output
+         if (!anyInputNotesHeld && !mOnlyPlayWhenPulsed) //new input, clear any existing output, but only when pulse-to-play is off
          {
             for (int i = 0; i < 128; ++i)
             {
